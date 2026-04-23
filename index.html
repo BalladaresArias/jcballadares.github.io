@@ -452,6 +452,234 @@
     border-radius: 2px;
   }
 
+  /* PROJECTS */
+  #proyectos { max-width: 1200px; padding: 6rem 3rem; margin: 0 auto; }
+
+  .project-card {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    overflow: hidden;
+    transition: border-color 0.3s, transform 0.3s, opacity 0.5s;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,136,0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .project-header {
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .project-number {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .project-subtitle {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    letter-spacing: 0.05em;
+  }
+
+  .project-status {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .project-body {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .project-desc {
+    color: #999;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .project-features li {
+    font-size: 0.88rem;
+    color: #aaa;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    line-height: 1.5;
+  }
+
+  .project-features li::before {
+    content: '→';
+    color: var(--accent);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .project-tech-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .tech-group-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--accent2);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tech-pill {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    padding: 0.3rem 0.65rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .tech-pill:hover { border-color: var(--accent2); color: var(--accent2); }
+
+  .project-footer {
+    padding: 1.25rem 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .project-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    transition: all 0.2s;
+  }
+
+  .project-link.primary {
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+  }
+
+  .project-link.primary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0 rgba(0,255,136,0.3);
+  }
+
+  .project-link.secondary {
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+
+  .project-link.secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .arch-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .arch-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+  }
+
+  .arch-box {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  .arch-box.highlight {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .arch-box.highlight2 {
+    border-color: var(--accent2);
+    color: var(--accent2);
+  }
+
+  .arch-arrow {
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+
+  @media (max-width: 768px) {
+    .project-body { grid-template-columns: 1fr; gap: 1.5rem; }
+    .project-header { flex-direction: column; }
+  }
+
   /* CONTACT */
   #contacto { max-width: 1200px; padding: 6rem 3rem; margin: 0 auto; }
 
@@ -573,6 +801,7 @@
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#experiencia">Experiencia</a></li>
     <li><a href="#habilidades">Habilidades</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
@@ -609,7 +838,7 @@
         <div class="stat-label">AÑOS DE EXPERIENCIA</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">4</div>
+        <div class="stat-number">5</div>
         <div class="stat-label">PROYECTOS DESTACADOS</div>
       </div>
       <div class="stat-card">
@@ -674,6 +903,16 @@
       </div>
     </div>
 
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <p class="timeline-period">MAR 2026 — ABR 2026</p>
+      <h3 class="timeline-role">Desarrollador Full Stack</h3>
+      <p class="timeline-company">Tienda web Ecommerce — Independiente</p>
+      <p class="timeline-desc">Tienda web ecommerce, dedicada para ventas en linea y gestion de inventario, usando arquitectura REST.</p>
+      <div class="timeline-tags">
+        <span class="tag">Node.js</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">APIs REST</span><span class="tag">Axiaos</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -735,9 +974,123 @@
   </div>
 </div>
 
+<!-- PROYECTOS -->
+<div id="proyectos" style="max-width:1200px; margin:0 auto; padding:0 3rem 6rem;">
+  <p class="section-label">04 — Proyectos</p>
+  <h2 class="section-title">Proyecto<br>destacado</h2>
+
+  <!-- ShopFlow Ecommerce -->
+  <div class="project-card">
+    <div class="project-header">
+      <div>
+        <p class="project-number">PROYECTO_01</p>
+        <h3 class="project-title">ShopFlow Ecommerce</h3>
+        <p class="project-subtitle">Plataforma de comercio electrónico Full Stack — producción real</p>
+      </div>
+      <span class="project-status">✦ PRODUCCIÓN</span>
+    </div>
+
+    <div class="project-body">
+      <!-- Columna izquierda: descripción y funcionalidades -->
+      <div>
+        <p class="project-desc">
+          Plataforma de e-commerce completa construida desde cero con arquitectura REST. Incluye panel de administración, pasarela de pagos real con Wompi, sistema de fidelización de clientes, facturación automática en PDF y pruebas de carga con k6. Desplegada en producción con backend en Render y base de datos en Railway.
+        </p>
+        <ul class="project-features">
+          <li>Autenticación JWT con roles diferenciados (admin / cliente)</li>
+          <li>Pasarela de pagos Wompi con tokenización de tarjetas y webhooks automáticos</li>
+          <li>Sistema de cupones de descuento (porcentaje y valor fijo)</li>
+          <li>Reseñas y calificaciones de productos verificadas por compra</li>
+          <li>Lista de deseos (wishlist) por usuario</li>
+          <li>Sistema de puntos de fidelización canjeables</li>
+          <li>Facturación automática en PDF con Puppeteer y envío por email</li>
+          <li>Panel de analytics con métricas de ventas y exportación a CSV</li>
+          <li>66 pruebas unitarias (Jest + Supertest) y pruebas de carga con k6 (50 usuarios concurrentes)</li>
+          <li>Documentación de API con Swagger UI</li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha: tecnologías y arquitectura -->
+      <div class="project-tech-block">
+
+        <div>
+          <p class="tech-group-label">Frontend</p>
+          <div class="tech-pills">
+            <span class="tech-pill">React 18</span>
+            <span class="tech-pill">Vite</span>
+            <span class="tech-pill">React Router</span>
+            <span class="tech-pill">Axios</span>
+            <span class="tech-pill">Context API</span>
+            <span class="tech-pill">Lucide Icons</span>
+            <span class="tech-pill">React Hot Toast</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="tech-group-label">Backend</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Node.js</span>
+            <span class="tech-pill">Express 5</span>
+            <span class="tech-pill">MySQL2</span>
+            <span class="tech-pill">JWT</span>
+            <span class="tech-pill">bcryptjs</span>
+            <span class="tech-pill">Helmet</span>
+            <span class="tech-pill">Socket.io</span>
+            <span class="tech-pill">Nodemailer</span>
+            <span class="tech-pill">Puppeteer</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="tech-group-label">Infraestructura & Testing</p>
+          <div class="tech-pills">
+            <span class="tech-pill">Railway (MySQL)</span>
+            <span class="tech-pill">Render (API)</span>
+            <span class="tech-pill">Vercel (Frontend)</span>
+            <span class="tech-pill">Wompi</span>
+            <span class="tech-pill">Jest</span>
+            <span class="tech-pill">Supertest</span>
+            <span class="tech-pill">k6</span>
+            <span class="tech-pill">Swagger</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="tech-group-label">Arquitectura</p>
+          <div class="arch-diagram">
+            <div class="arch-row">
+              <span class="arch-box highlight">React + Vite</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-box highlight2">Express API</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-box">MySQL</span>
+            </div>
+            <div class="arch-row">
+              <span class="arch-box">Wompi</span>
+              <span class="arch-arrow">↔</span>
+              <span class="arch-box highlight2">Webhooks</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-box">Email</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="project-footer">
+      <a href="https://github.com/BalladaresArias/ecommerce-api" target="_blank" class="project-link primary">Ver en GitHub →</a>
+      <span style="font-family:'Space Mono',monospace; font-size:0.65rem; color:var(--muted); margin-left:auto;">
+        66 tests ✓ &nbsp;|&nbsp; 50 VUs k6 ✓ &nbsp;|&nbsp; REST API + WebSockets
+      </span>
+    </div>
+  </div>
+
+</div>
+
 <!-- CONTACTO -->
 <div id="contacto" style="max-width:1200px; margin:0 auto; padding:0 3rem 6rem;">
-  <p class="section-label">04 — Contacto</p>
+  <p class="section-label">05 — Contacto</p>
   <div class="contact-box">
     <div>
       <h2 class="contact-headline">¿Tienes un<br>proyecto en <span>mente?</span></h2>
@@ -786,6 +1139,7 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.timeline-item').forEach(el => observer.observe(el));
+  document.querySelectorAll('.project-card').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
